@@ -4,6 +4,7 @@
 
 Plant::Plant()
 {
+	
 }
 
 

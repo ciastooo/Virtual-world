@@ -26,7 +26,7 @@ void OrganismList::insert(Organism *data) {
 	}
 	else {
 		OrganismListItem* search = head;
-		while (search->getOrganism()->getInitiative() > data->getInitiative()) {
+		while (search->getOrganism()->getInitiative() >= data->getInitiative()) {
 			if (search->getNext() == nullptr) {
 				break;
 			}

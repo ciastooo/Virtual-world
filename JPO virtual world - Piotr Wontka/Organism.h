@@ -19,4 +19,8 @@ public:
 	void virtual collision() = 0;
 	void virtual draw() = 0;
 	int getInitiative();
+	World* getWorld();
+	int getX();
+	int getY();
+	int getStrength();
 };
