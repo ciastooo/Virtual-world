@@ -1,19 +1,19 @@
 #pragma once
 #include "Organism.h"
-#include <vector>
 
 class World
 {
 private:
 	int width;
 	int height;
-	std::vector<Organism> organisms;
+	Organism *organisms;
+	int organisimsLength;
+	void moveCursorTo(int x, int y);
 public:
-	World();
 	World(int, int);
+	World();
 	~World();
 	void Tick();
 	void draw();
-	int getWidth();
-	int getheight();
+	int getOrganisimsCount();
 };

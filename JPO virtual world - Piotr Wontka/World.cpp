@@ -1,16 +1,57 @@
 #include "stdafx.h"
 #include "World.h"
+#include <iostream>
+#include <windows.h>
 
-World::World()
+using namespace std;
+
+World::World(int width, int height)
 {
-	this->height = 20;
-	this->width = 20;
+	if (height > 20) {
+		this->height = 20;
+	}
+	else if (height < 5) {
+		this->height = 5;
+	}
+	else {
+		this->height = height;
+	}
+
+	if (width > 70) {
+		this->width = 70;
+	} else if (width < 5) {
+		this->width = 5;
+	}
+	else {
+		this->width = width;
+	}
 }
-World::World(int height, int width)
+World::World() : height(20), width(20)
 {
-	this->height = height;
-	this->width = width;
 }
 World::~World()
 {
+	if (organisimsLength > 0) {
+		delete[] organisms;
+	}
+}
+void World::draw() {
+	for (int i = 0; i < this->width+2; i++) {
+		cout << "#";
+	}
+	for (int i = 0; i < this->height + 2; i++) {
+		cout << endl << "#";
+		this->moveCursorTo(this->width + 1, i);
+		cout << "#";
+	}
+	cout << endl;
+	for (int i = 0; i < this->width + 2; i++) {
+		cout << "#";
+	}
+}
+
+void World::moveCursorTo(int x, int y)
+{
+	COORD p = { x, y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), p);
 }

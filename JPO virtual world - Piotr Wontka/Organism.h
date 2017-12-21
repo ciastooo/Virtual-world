@@ -1,5 +1,6 @@
 #pragma once
-#include "World.h"
+//class Worlds; // forward declaration
+//#include "World.h"
 
 class Organism
 {
@@ -8,9 +9,11 @@ private:
 	int initiative;
 	int x;
 	int y;
-	World world;
+	//World* world;
+	char symbol;
 public:
-	Organism(World&, int, int, int, int);
+	Organism();
+	Organism(int, int, int, int, char);
 	~Organism();
 	void virtual action() = 0;
 	void virtual collision() = 0;

@@ -6,7 +6,6 @@ Animal::Animal()
 {
 }
 
-
 Animal::~Animal()
 {
 }
