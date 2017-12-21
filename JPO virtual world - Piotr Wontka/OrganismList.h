@@ -9,4 +9,6 @@ public:
 	OrganismList();
 	~OrganismList();
 	void insert(Organism*);
+	void doAction();
+	void remove(Organism*);
 };
