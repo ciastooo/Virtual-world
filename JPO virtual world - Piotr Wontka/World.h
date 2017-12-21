@@ -1,13 +1,12 @@
 #pragma once
-#include "Organism.h"
+#include "OrganismList.h"
 
 class World
 {
 private:
 	int width;
 	int height;
-	Organism *organisms;
-	int organisimsLength;
+	OrganismList *organisms;
 	void moveCursorTo(int x, int y);
 public:
 	World(int, int);
@@ -15,5 +14,4 @@ public:
 	~World();
 	void Tick();
 	void draw();
-	int getOrganisimsCount();
 };

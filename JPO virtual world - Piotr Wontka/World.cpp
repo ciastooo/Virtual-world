@@ -48,8 +48,16 @@ void World::draw() {
 	for (int i = 0; i < this->width + 2; i++) {
 		cout << "#";
 	}
+	for (int i = 0; i < this->organisimsLength; i++) {
+		this->organisms[i].draw();
+	}
 }
-
+void World::Tick() {
+	this->moveCursorTo(0, this->height+3);
+	for (int i = 0; i < this->organisimsLength; i++) {
+		this->organisms[i].action();
+	}
+}
 void World::moveCursorTo(int x, int y)
 {
 	COORD p = { x, y };
