@@ -7,7 +7,6 @@ private:
 	int width;
 	int height;
 	OrganismList *organisms;
-	void moveCursorTo(int x, int y);
 public:
 	World(int, int);
 	World();
@@ -16,4 +15,6 @@ public:
 	void draw();
 	int getWidth();
 	int getHeight();
+	void moveCursorTo(int x, int y);
+	void insertOrganism(Organism*);
 };

@@ -25,6 +25,7 @@ World::World(int width, int height)
 	else {
 		this->width = width;
 	}
+	this->organisms = new OrganismList();
 }
 World::World() : height(20), width(20)
 {
@@ -37,7 +38,7 @@ void World::draw() {
 	for (int i = 0; i < this->width+2; i++) {
 		cout << "#";
 	}
-	for (int i = 0; i < this->height + 2; i++) {
+	for (int i = 0; i < this->height + 1; i++) {
 		cout << endl << "#";
 		this->moveCursorTo(this->width + 1, i);
 		cout << "#";
@@ -48,8 +49,11 @@ void World::draw() {
 	}
 }
 void World::Tick() {
+	system("cls");
+	this->draw();
 	this->moveCursorTo(0, this->height+3);
-
+	this->organisms->doAction();
+	this->organisms->drawAll();
 }
 void World::moveCursorTo(int x, int y)
 {
@@ -61,4 +65,7 @@ int World::getHeight() {
 }
 int World::getWidth() {
 	return this->width;
+}
+void World::insertOrganism(Organism *toInsert) {
+	this->organisms->insert(toInsert);
 }
