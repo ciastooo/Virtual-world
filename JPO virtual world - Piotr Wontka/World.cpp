@@ -31,9 +31,7 @@ World::World() : height(20), width(20)
 }
 World::~World()
 {
-	if (organisimsLength > 0) {
-		delete[] organisms;
-	}
+	delete organisms;
 }
 void World::draw() {
 	for (int i = 0; i < this->width+2; i++) {
@@ -48,18 +46,19 @@ void World::draw() {
 	for (int i = 0; i < this->width + 2; i++) {
 		cout << "#";
 	}
-	for (int i = 0; i < this->organisimsLength; i++) {
-		this->organisms[i].draw();
-	}
 }
 void World::Tick() {
 	this->moveCursorTo(0, this->height+3);
-	for (int i = 0; i < this->organisimsLength; i++) {
-		this->organisms[i].action();
-	}
+
 }
 void World::moveCursorTo(int x, int y)
 {
 	COORD p = { x, y };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), p);
+}
+int World::getHeight() {
+	return this->height;
+}
+int World::getWidth() {
+	return this->width;
 }

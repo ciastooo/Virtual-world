@@ -14,4 +14,6 @@ public:
 	~World();
 	void Tick();
 	void draw();
+	int getWidth();
+	int getHeight();
 };

@@ -39,6 +39,9 @@
     <ClInclude Include="OrganismListItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RandomNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -63,6 +66,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OrganismListItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

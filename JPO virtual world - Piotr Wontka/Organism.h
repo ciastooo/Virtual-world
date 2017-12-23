@@ -4,16 +4,14 @@ class World; // forward declaration
 
 class Organism
 {
-private:
+protected:
 	int strength;
 	int initiative;
 	int x;
 	int y;
 	World* world;
-	char symbol;
 public:
-	Organism();
-	Organism(World*, int, int, int, int, char);
+	Organism(World*, int, int, int, int);
 	~Organism();
 	void virtual action() = 0;
 	void virtual collision() = 0;
