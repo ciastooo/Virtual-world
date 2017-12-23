@@ -10,5 +10,6 @@ public:
 	~OrganismList();
 	void insert(Organism*);
 	void doAction();
+	void drawAll();
 	void remove(Organism*);
 };

@@ -34,19 +34,33 @@ void OrganismList::insert(Organism *data) {
 				search = search->getNext();
 			}
 		}
-		newItem->setPrev(search->getPrev());
-		newItem->setNext(search->getNext());
-		search->setPrev(newItem);
-		if (newItem->getPrev() != nullptr) {
-			search = newItem->getPrev();
+		if (search->getOrganism()->getInitiative() >= data->getInitiative()) {
+			newItem->setNext(search->getNext());
 			search->setNext(newItem);
+			newItem->setPrev(search);			
 		}
+		else {
+			newItem->setPrev(search->getPrev());
+			newItem->setNext(search);
+			search->setPrev(newItem);
+			if (head == search) {
+				head = newItem;
+			}
+		}
+		
 	}
 }
 void OrganismList::doAction() {
 	OrganismListItem *current = head;
 	while (current != nullptr) {
 		current->getOrganism()->action();
+		current = current->getNext();
+	}
+}
+void OrganismList::drawAll() {
+	OrganismListItem *current = head;
+	while (current != nullptr) {
+		current->getOrganism()->draw();
 		current = current->getNext();
 	}
 }
