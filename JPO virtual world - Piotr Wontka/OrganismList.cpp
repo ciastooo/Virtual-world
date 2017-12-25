@@ -35,19 +35,25 @@ void OrganismList::insert(Organism *data) {
 			}
 		}
 		if (search->getOrganism()->getInitiative() >= data->getInitiative()) {
-			newItem->setNext(search->getNext());
+			if (search->getNext() != nullptr) {
+				search->getNext()->setPrev(newItem);
+				newItem->setNext(search->getNext());
+			}
 			search->setNext(newItem);
-			newItem->setPrev(search);			
+			newItem->setPrev(search);
 		}
 		else {
-			newItem->setPrev(search->getPrev());
-			newItem->setNext(search);
-			search->setPrev(newItem);
-			if (head == search) {
+			if (search->getPrev() != nullptr) {
+				search->getPrev()->setNext(newItem);
+				newItem->setPrev(search->getPrev());
+			}
+			else {
 				head = newItem;
 			}
+			newItem->setNext(search);
+			search->setPrev(newItem);
 		}
-		
+
 	}
 }
 void OrganismList::doAction() {
@@ -87,5 +93,25 @@ void OrganismList::remove(Organism *toRemove) {
 			}
 		}
 		delete current;
+	}
+}
+OrganismListItem* OrganismList::search(int x, int y) {
+	OrganismListItem *search = head;
+	while (search != nullptr) {
+		Organism *searchOrganism = search->getOrganism();
+		if (searchOrganism->getX() == x && searchOrganism->getY() == y) {
+			return search;
+		}
+		else {
+			search = search->getNext();
+		}
+	}
+	return nullptr;
+}
+void OrganismList::refreshMove() {
+	OrganismListItem *current = head;
+	while (current != nullptr) {
+		current->getOrganism()->setCanMove(true);
+		current = current->getNext();
 	}
 }

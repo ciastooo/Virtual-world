@@ -12,4 +12,6 @@ public:
 	void doAction();
 	void drawAll();
 	void remove(Organism*);
+	OrganismListItem* search(int x, int y);
+	void refreshMove();
 };
