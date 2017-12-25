@@ -12,6 +12,7 @@ protected:
 	World* world;
 	char symbol;
 	bool canMove;
+	bool toDelete = false;
 public:
 	Organism(World*, int strength, int initiative, int x, int y, char symbol);
 	~Organism();
@@ -27,4 +28,6 @@ public:
 	char getSymbol();
 	bool getCanMove();
 	void setCanMove(bool);
+	void setToDelete();
+	bool getToDelete();
 };

@@ -56,3 +56,9 @@ bool Organism::getCanMove() {
 void Organism::setCanMove(bool newValue) {
 	this->canMove = newValue;
 }
+void Organism::setToDelete() {
+	this->toDelete = true;
+}
+bool Organism::getToDelete() {
+	return this->toDelete;
+}

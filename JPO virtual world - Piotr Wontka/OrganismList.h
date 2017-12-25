@@ -11,7 +11,7 @@ public:
 	void insert(Organism*);
 	void doAction();
 	void drawAll();
-	void remove(Organism*);
+	void remove(OrganismListItem*);
 	OrganismListItem* search(int x, int y);
 	void refreshMove();
 };

@@ -119,7 +119,7 @@ bool Animal::collision(Organism *colliding) {
 	if (colliding->getSymbol() == this->symbol) {
 		Animal *collidingSameAnimal = dynamic_cast<Animal*>(colliding);
 		//same organisms -> they try to multiply
-		cout << "Próba reprodukcji zwerzêcia " << this->symbol << "... ";
+		//cout << "Próba reprodukcji zwerzêcia " << this->symbol << "... ";
 		Animal *offspring;
 		offspring = this->tryReproduce();
 		if (offspring == nullptr) {
@@ -137,6 +137,15 @@ bool Animal::collision(Organism *colliding) {
 		}
 	}
 	else {
+		cout << "Walka! ";
+		if (this->strength >= colliding->getStrength()) {
+			cout << "Atakuj¹ce zwierze " << this->symbol << " wygrywa! Zwierze " << colliding->getSymbol() << " umiera" << endl;
+			colliding->setToDelete();
+		}
+		else {
+			cout << "Atakuj¹ce zwierze " << this->symbol << " przegrywa i umiera!" << endl;
+			this->toDelete = true;
+		}
 		return true;
 	}
 }

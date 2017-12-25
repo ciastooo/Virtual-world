@@ -10,8 +10,8 @@ World::World(int width, int height)
 	if (height > 20) {
 		this->height = 20;
 	}
-	else if (height < 5) {
-		this->height = 5;
+	else if (height < 2) {
+		this->height = 2;
 	}
 	else {
 		this->height = height;
@@ -19,8 +19,8 @@ World::World(int width, int height)
 
 	if (width > 70) {
 		this->width = 70;
-	} else if (width < 5) {
-		this->width = 5;
+	} else if (width < 2) {
+		this->width = 2;
 	}
 	else {
 		this->width = width;

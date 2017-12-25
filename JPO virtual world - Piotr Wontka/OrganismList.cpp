@@ -59,51 +59,66 @@ void OrganismList::insert(Organism *data) {
 void OrganismList::doAction() {
 	OrganismListItem *current = head;
 	while (current != nullptr) {
-		current->getOrganism()->action();
-		current = current->getNext();
+		if (current->getOrganism()->getToDelete()) {
+			OrganismListItem *toRemove = current;
+			current = current->getNext();
+			this->remove(toRemove);
+		}
+		else {
+			current->getOrganism()->action();
+			current = current->getNext();
+		}
 	}
 }
 void OrganismList::drawAll() {
 	OrganismListItem *current = head;
 	while (current != nullptr) {
-		current->getOrganism()->draw();
-		current = current->getNext();
-	}
-}
-void OrganismList::remove(Organism *toRemove) {
-	OrganismListItem *current = head;
-	while (current != nullptr && current->getOrganism() != toRemove) {
-		current = current->getNext();
-	}
-	if (current->getOrganism() == toRemove) {
-		OrganismListItem *tmpPrev = current->getPrev();
-		OrganismListItem *tmpNext = current->getNext();
-		if (tmpNext == nullptr && tmpPrev == nullptr) {
-			head = nullptr;
+		if (current->getOrganism()->getToDelete()) {
+			OrganismListItem *toRemove = current;
+			current = current->getNext();
+			this->remove(toRemove);
 		}
 		else {
-			if (tmpPrev != nullptr) {
-				tmpPrev->setNext(tmpNext);
-			}
-			if (tmpNext != nullptr) {
-				tmpNext->setPrev(tmpPrev);
-				if (head == current) {
-					head = tmpNext;
-				}
+			current->getOrganism()->draw();
+			current = current->getNext();
+		}
+	}
+}
+void OrganismList::remove(OrganismListItem *toRemove) {
+	OrganismListItem *tmpPrev = toRemove->getPrev();
+	OrganismListItem *tmpNext = toRemove->getNext();
+	if (tmpNext == nullptr && tmpPrev == nullptr) {
+		head = nullptr;
+	}
+	else {
+		if (tmpPrev != nullptr) {
+			tmpPrev->setNext(tmpNext);
+		}
+		if (tmpNext != nullptr) {
+			tmpNext->setPrev(tmpPrev);
+			if (head == toRemove) {
+				head = tmpNext;
 			}
 		}
-		delete current;
 	}
+	delete toRemove;
 }
 OrganismListItem* OrganismList::search(int x, int y) {
 	OrganismListItem *search = head;
 	while (search != nullptr) {
 		Organism *searchOrganism = search->getOrganism();
-		if (searchOrganism->getX() == x && searchOrganism->getY() == y) {
-			return search;
+		if (searchOrganism->getToDelete()) {
+			OrganismListItem *toRemove = search;
+			search = search->getNext();
+			this->remove(toRemove);
 		}
 		else {
-			search = search->getNext();
+			if (searchOrganism->getX() == x && searchOrganism->getY() == y) {
+				return search;
+			}
+			else {
+				search = search->getNext();
+			}
 		}
 	}
 	return nullptr;
