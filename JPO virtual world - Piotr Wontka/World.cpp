@@ -53,6 +53,7 @@ void World::Tick() {
 	this->draw();
 	this->moveCursorTo(0, this->height+3);
 	this->organisms->doAction();
+	this->organisms->refreshMove();
 	this->organisms->drawAll();
 }
 void World::moveCursorTo(int x, int y)
@@ -68,4 +69,13 @@ int World::getWidth() {
 }
 void World::insertOrganism(Organism *toInsert) {
 	this->organisms->insert(toInsert);
+}
+Organism* World::getOrganismFromPosition(int x, int y) {
+	OrganismListItem *search = this->organisms->search(x, y);
+	if (search != nullptr) {
+		return search->getOrganism();
+	}
+	else {
+		return nullptr;
+	}
 }

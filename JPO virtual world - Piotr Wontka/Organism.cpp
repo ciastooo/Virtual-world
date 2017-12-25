@@ -23,9 +23,9 @@ void Organism::action() {
 	
 }
 
-//void Organism::collision() {
-//
-//}
+bool Organism::collision(Organism* other) {
+	return true;
+}
 
 void Organism::draw() {
 	this->world->moveCursorTo(this->x, this->y);
@@ -46,4 +46,13 @@ int Organism::getY() {
 }
 int Organism::getStrength() {
 	return this->strength;
+}
+char Organism::getSymbol() {
+	return this->symbol;
+}
+bool Organism::getCanMove() {
+	return this->canMove;
+}
+void Organism::setCanMove(bool newValue) {
+	this->canMove = newValue;
 }

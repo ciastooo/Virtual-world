@@ -11,15 +11,20 @@ protected:
 	int y;
 	World* world;
 	char symbol;
+	bool canMove;
 public:
 	Organism(World*, int strength, int initiative, int x, int y, char symbol);
 	~Organism();
-	void virtual action() = 0;
-	//void virtual collision() = 0;
-	void virtual draw() = 0;
+	virtual void action() = 0;
+	virtual bool collision(Organism*) = 0;
+	virtual void draw() = 0;
+	virtual Organism* tryReproduce() = 0;
 	int getInitiative();
 	World* getWorld();
 	int getX();
 	int getY();
 	int getStrength();
+	char getSymbol();
+	bool getCanMove();
+	void setCanMove(bool);
 };
