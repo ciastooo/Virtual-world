@@ -119,7 +119,7 @@ bool Animal::collision(Organism *colliding) {
 	if (colliding->getSymbol() == this->symbol) {
 		Animal *collidingSameAnimal = dynamic_cast<Animal*>(colliding);
 		//same organisms -> they try to multiply
-		//cout << "Próba reprodukcji zwerzêcia " << this->symbol << "... ";
+		cout << "Próba reprodukcji zwerzêcia " << this->symbol << "... ";
 		Animal *offspring;
 		offspring = this->tryReproduce();
 		if (offspring == nullptr) {
