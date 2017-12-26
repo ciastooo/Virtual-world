@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />
+    <ClInclude Include="Fox.h" />
     <ClInclude Include="Sheep.h" />
     <ClInclude Include="Organism.h" />
     <ClInclude Include="OrganismList.h" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Fox.cpp" />
     <ClCompile Include="JPO virtual world - Piotr Wontka.cpp" />
     <ClCompile Include="Organism.cpp" />
     <ClCompile Include="OrganismListItem.cpp" />

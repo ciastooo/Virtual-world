@@ -140,12 +140,12 @@ bool Animal::collision(Organism *colliding) {
 	}
 	else {
 		cout << "Walka! ";
-		if (this->strength >= colliding->getStrength()) {
-			cout << "Atakuj¹ce zwierze " << this->symbol << " wygrywa! Zwierze " << colliding->getSymbol() << " umiera" << endl;
+		if (this->strength > colliding->getStrength()) {
+			cout << "Atakuj¹ce zwierze " << colliding->getSymbol() << " przegrywa i umiera!" << endl;
 			colliding->setToDelete();
 		}
 		else {
-			cout << "Atakuj¹ce zwierze " << this->symbol << " przegrywa i umiera!" << endl;
+			cout << "Atakuj¹ce zwierze " << colliding->getSymbol() << " wygrywa! Zwierze " << this->symbol << " umiera" << endl;
 			this->toDelete = true;
 		}
 		return true;
