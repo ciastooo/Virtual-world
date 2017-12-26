@@ -13,17 +13,18 @@ protected:
 	char symbol;
 	bool canMove;
 	bool toDelete = false;
+	virtual bool tryReproduce(Organism*) = 0;
 public:
 	Organism(World*, int strength, int initiative, int x, int y, char symbol);
 	~Organism();
 	virtual void action() = 0;
 	virtual bool collision(Organism*) = 0;
 	virtual void draw() = 0;
-	virtual Organism* tryReproduce() = 0;
 	int getInitiative();
 	World* getWorld();
 	int getX();
 	int getY();
+	void setXY(int, int);
 	int getStrength();
 	char getSymbol();
 	bool getCanMove();

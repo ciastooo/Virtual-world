@@ -62,3 +62,7 @@ void Organism::setToDelete() {
 bool Organism::getToDelete() {
 	return this->toDelete;
 }
+void Organism::setXY(int x, int y) {
+	this->x = x;
+	this->y = y;
+}

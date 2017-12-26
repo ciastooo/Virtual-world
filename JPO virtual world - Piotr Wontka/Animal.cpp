@@ -14,7 +14,7 @@ Animal::~Animal()
 {
 }
 
-Animal* Animal::tryReproduce() {
+bool Animal::tryReproduce(Organism *child) {
 	for (int x = this->x - 1; x <= this->x + 1; x += 2) {
 		Organism *occupied;
 		int tmpX = x;
@@ -26,7 +26,9 @@ Animal* Animal::tryReproduce() {
 		}
 		occupied = this->world->getOrganismFromPosition(tmpX, this->y);
 		if (occupied == nullptr) {
-			return new Animal(this->world, this->strength, this->initiative, tmpX, this->y, this->symbol, false);
+			child->setXY(tmpX, this->y);
+			this->world->insertOrganism(child);
+			return true;
 		}
 	}
 	for (int y = this->y - 1; y <= this->y + 1; y += 2) {
@@ -40,10 +42,12 @@ Animal* Animal::tryReproduce() {
 		}
 		occupied = this->world->getOrganismFromPosition(this->x, tmpY);
 		if (occupied == nullptr) {
-			return new Animal(this->world, this->strength, this->initiative, this->x, tmpY, this->symbol, false);
+			child->setXY(this->x, tmpY);
+			this->world->insertOrganism(child);
+			return true;
 		}
 	}
-	return nullptr;
+	return false;
 }
 
 void Animal::action() {
@@ -120,14 +124,12 @@ bool Animal::collision(Organism *colliding) {
 		Animal *collidingSameAnimal = dynamic_cast<Animal*>(colliding);
 		//same organisms -> they try to multiply
 		cout << "Próba reprodukcji zwerzêcia " << this->symbol << "... ";
-		Animal *offspring;
-		offspring = this->tryReproduce();
-		if (offspring == nullptr) {
+		bool tryMultiply = this->reproduce();
+		if (!tryMultiply) {
 			//let's try with other Animal
-			offspring = collidingSameAnimal->tryReproduce();
+			tryMultiply = collidingSameAnimal->reproduce();
 		}
-		if (offspring != nullptr) {
-			this->world->insertOrganism(offspring);
+		if (tryMultiply) {
 			cout << "Sukces!" << endl;
 			return false;
 		}
