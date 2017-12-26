@@ -45,6 +45,9 @@
     <ClInclude Include="Wolf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sheep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -75,6 +78,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Wolf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sheep.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

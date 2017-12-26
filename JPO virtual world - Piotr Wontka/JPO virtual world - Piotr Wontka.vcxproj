@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />
+    <ClInclude Include="Sheep.h" />
     <ClInclude Include="Organism.h" />
     <ClInclude Include="OrganismList.h" />
     <ClInclude Include="OrganismListItem.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="Plant.cpp" />
     <ClCompile Include="OrganismList.cpp" />
     <ClCompile Include="RandomNumber.cpp" />
+    <ClCompile Include="Sheep.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
