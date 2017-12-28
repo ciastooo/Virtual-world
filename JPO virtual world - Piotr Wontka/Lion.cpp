@@ -14,7 +14,7 @@ Lion::~Lion() {
 
 bool Lion::reproduce() {
 	Lion *offspring = new Lion(this->world, this->x, this->y, false);
-	if (Animal::tryReproduce(offspring)) {
+	if (this->tryReproduce(offspring)) {
 		return true;
 	}
 	else {

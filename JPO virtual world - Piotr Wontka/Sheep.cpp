@@ -11,7 +11,7 @@ Sheep::~Sheep() {
 
 bool Sheep::reproduce() {
 	Sheep *offspring = new Sheep(this->world, this->x, this->y, false);
-	if (Animal::tryReproduce(offspring)) {
+	if (this->tryReproduce(offspring)) {
 		return true;
 	}
 	else {

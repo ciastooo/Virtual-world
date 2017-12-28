@@ -146,6 +146,7 @@
     <ClInclude Include="Animal.h" />
     <ClInclude Include="Fox.h" />
     <ClInclude Include="Lion.h" />
+    <ClInclude Include="Rabbit.h" />
     <ClInclude Include="Sheep.h" />
     <ClInclude Include="Organism.h" />
     <ClInclude Include="OrganismList.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="OrganismListItem.cpp" />
     <ClCompile Include="Plant.cpp" />
     <ClCompile Include="OrganismList.cpp" />
+    <ClCompile Include="Rabbit.cpp" />
     <ClCompile Include="RandomNumber.cpp" />
     <ClCompile Include="Sheep.cpp" />
     <ClCompile Include="stdafx.cpp">
