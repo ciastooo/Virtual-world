@@ -70,7 +70,6 @@ void Fox::action() {
 		}
 		break;
 	}
-	cout << endl;
 	Organism *colliding = this->world->getOrganismFromPosition(newX, newY);
 	if (colliding != nullptr) {
 		if (colliding->getStrength() > this->strength) {
