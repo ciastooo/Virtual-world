@@ -20,6 +20,7 @@ public:
 	virtual void action() = 0;
 	virtual bool collision(Organism*) = 0;
 	virtual void draw() = 0;
+	virtual bool reproduce() = 0;
 	int getInitiative();
 	World* getWorld();
 	int getX();

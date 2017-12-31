@@ -1,6 +1,6 @@
 #pragma once
 
-static class RandomNumber{
+class RandomNumber{
 public:
 	static void init();
 	static int getRandomNumber(int, int);
