@@ -11,5 +11,4 @@ public:
 	virtual void action();
 	virtual bool collision(Organism *other);
 	virtual bool reproduce() = 0;
-	void draw();
 };

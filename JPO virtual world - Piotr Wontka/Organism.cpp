@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-Organism::Organism(World *world, int strength, int initiative, int x, int y, char symbol)
+Organism::Organism(World *world, int strength, int initiative, int x, int y, char symbol, bool canMove)
 {
 	this->world = world;
 	this->strength = strength;
@@ -13,6 +13,7 @@ Organism::Organism(World *world, int strength, int initiative, int x, int y, cha
 	this->x = x;
 	this->y = y;
 	this->symbol = symbol;
+	this->canMove = canMove;
 }
 
 Organism::~Organism()

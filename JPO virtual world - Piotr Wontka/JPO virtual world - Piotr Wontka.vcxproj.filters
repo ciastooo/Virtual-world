@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Animals">
+      <UniqueIdentifier>{b8f0ee1f-c692-4376-8b07-78351e0079fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Plants">
+      <UniqueIdentifier>{7f4224d3-cc75-41d3-b83f-c52494a1a7dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -57,6 +63,9 @@
     <ClInclude Include="Rabbit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Grass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -71,12 +80,6 @@
     <ClCompile Include="Organism.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Animal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Plant.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="OrganismList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -86,20 +89,29 @@
     <ClCompile Include="RandomNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Wolf.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Fox.cpp">
+      <Filter>Source Files\Animals</Filter>
     </ClCompile>
     <ClCompile Include="Sheep.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Animals</Filter>
     </ClCompile>
-    <ClCompile Include="Fox.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Wolf.cpp">
+      <Filter>Source Files\Animals</Filter>
     </ClCompile>
     <ClCompile Include="Lion.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Animals</Filter>
     </ClCompile>
     <ClCompile Include="Rabbit.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Animals</Filter>
+    </ClCompile>
+    <ClCompile Include="Animal.cpp">
+      <Filter>Source Files\Animals</Filter>
+    </ClCompile>
+    <ClCompile Include="Plant.cpp">
+      <Filter>Source Files\Plants</Filter>
+    </ClCompile>
+    <ClCompile Include="Grass.cpp">
+      <Filter>Source Files\Plants</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

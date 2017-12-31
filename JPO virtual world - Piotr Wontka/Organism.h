@@ -15,11 +15,11 @@ protected:
 	bool toDelete = false;
 	virtual bool tryReproduce(Organism*) = 0;
 public:
-	Organism(World*, int strength, int initiative, int x, int y, char symbol);
+	Organism(World*, int strength, int initiative, int x, int y, char symbol, bool canMove);
 	~Organism();
 	virtual void action() = 0;
 	virtual bool collision(Organism*) = 0;
-	virtual void draw() = 0;
+	virtual void draw();
 	virtual bool reproduce() = 0;
 	int getInitiative();
 	World* getWorld();

@@ -5,9 +5,8 @@
 
 using namespace std;
 
-Animal::Animal(World *world, int strength, int initiative, int x, int y, char symbol, bool canMove): Organism(world, strength, initiative, x, y, symbol)
+Animal::Animal(World *world, int strength, int initiative, int x, int y, char symbol, bool canMove): Organism(world, strength, initiative, x, y, symbol, canMove)
 {
-	this->canMove = canMove;
 }
 
 Animal::~Animal()
@@ -150,8 +149,4 @@ bool Animal::collision(Organism *colliding) {
 		}
 		return true;
 	}
-}
-
-void Animal::draw() {
-	Organism::draw();
 }

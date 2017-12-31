@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="Animal.h" />
     <ClInclude Include="Fox.h" />
+    <ClInclude Include="Grass.h" />
     <ClInclude Include="Lion.h" />
     <ClInclude Include="Rabbit.h" />
     <ClInclude Include="Sheep.h" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="Fox.cpp" />
+    <ClCompile Include="Grass.cpp" />
     <ClCompile Include="JPO virtual world - Piotr Wontka.cpp" />
     <ClCompile Include="Lion.cpp" />
     <ClCompile Include="Organism.cpp" />
