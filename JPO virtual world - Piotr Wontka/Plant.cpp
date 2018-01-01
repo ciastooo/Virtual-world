@@ -96,7 +96,7 @@ bool Plant::tryReproduce(Organism *child) {
 	}
 	Organism *colliding = this->world->getOrganismFromPosition(newX, newY);
 	if (colliding != nullptr) {
-		cout << " lecz to pole jest ju¿ zajête" << endl;
+		cout << " ale to pole jest ju¿ zajête" << endl;
 		return false;
 	}
 	else {
