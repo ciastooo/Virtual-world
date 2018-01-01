@@ -27,7 +27,6 @@ void Plant::action() {
 		cout << " - nie uda³o siê" << endl;
 	}
 	else {
-		cout << endl;
 		this->reproduce();
 	}
 	this->canMove = false;
@@ -47,7 +46,7 @@ bool Plant::collision(Organism *other) {
 }
 
 bool Plant::tryReproduce(Organism *child) {
-	cout << "Sukces! Roœlina " << this->symbol << " próbuje rozmno¿yæ siê na ";
+	cout << " na ";
 	int direction = RandomNumber::getRandomNumber(1, 4);
 	int newY = this->y;
 	int newX = this->x;

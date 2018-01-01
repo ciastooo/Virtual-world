@@ -35,6 +35,7 @@ World::~World()
 	delete organisms;
 }
 void World::draw() {
+	cout << "Piotr Wontka 167951" << endl;
 	for (int i = 0; i < this->width+2; i++) {
 		cout << "#";
 	}
@@ -51,14 +52,15 @@ void World::draw() {
 void World::Tick() {
 	system("cls");
 	this->draw();
-	this->moveCursorTo(0, this->height+3);
+	this->moveCursorTo(0, this->height + 3);
 	this->organisms->doAction();
 	this->organisms->refreshMove();
 	this->organisms->drawAll();
+	this->moveCursorTo(0, -1);
 }
 void World::moveCursorTo(int x, int y)
 {
-	COORD p = { x, y };
+	COORD p = { x, y+1 };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), p);
 }
 int World::getHeight() {
