@@ -130,3 +130,13 @@ void OrganismList::refreshMove() {
 		current = current->getNext();
 	}
 }
+void OrganismList::writeToFile(ofstream &file) {
+	OrganismListItem *current = head;
+	while (current != nullptr) {
+		Organism *currentOrganism = current->getOrganism();
+		file << currentOrganism->getSymbol() << endl;
+		file << currentOrganism->getX() << endl;
+		file << currentOrganism->getY() << endl;
+		current = current->getNext();
+	}
+}

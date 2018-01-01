@@ -2,6 +2,8 @@
 #include "World.h"
 #include <iostream>
 #include <windows.h>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -80,4 +82,18 @@ Organism* World::getOrganismFromPosition(int x, int y) {
 	else {
 		return nullptr;
 	}
+}
+void World::exportToFile() {
+	system("cls");
+	string fileName;
+	cout << "Podaj nazwê pliku do którego ma zostaæ zapisany stan œwiata: ";
+	cin >> fileName;
+	ofstream file;
+	file.open(fileName + ".txt");
+	file << this->width << endl;
+	file << this->height << endl;
+	this->organisms->writeToFile(file);
+	file.close();
+	cout << endl << "Sukces! Plik zosta³ zapisany pod nazw¹ " << fileName << ".txt" << endl;
+	getchar();
 }
