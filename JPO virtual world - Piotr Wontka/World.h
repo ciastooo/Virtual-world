@@ -19,4 +19,5 @@ public:
 	void insertOrganism(Organism*);
 	Organism* getOrganismFromPosition(int x, int y);
 	void exportToFile();
+	void importFromFile();
 };
