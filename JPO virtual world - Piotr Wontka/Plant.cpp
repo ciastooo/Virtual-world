@@ -39,7 +39,7 @@ bool Plant::collision(Organism *other) {
 		other->setToDelete();
 	}
 	else {
-		cout << "Zwierze " << other->getSymbol() << " zjada roœlie " << this->symbol << endl;
+		cout << "Zwierze " << other->getSymbol() << " zjada roœlinê " << this->symbol << endl;
 		this->toDelete = true;
 	}
 	return true;

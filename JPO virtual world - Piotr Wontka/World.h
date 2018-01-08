@@ -13,6 +13,7 @@ public:
 	~World();
 	void Tick();
 	void draw();
+	void drawAll();
 	int getWidth();
 	int getHeight();
 	void moveCursorTo(int x, int y);

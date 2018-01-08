@@ -47,6 +47,7 @@ World::~World()
 	delete this->organisms;
 }
 void World::draw() {
+	this->moveCursorTo(0, -1);
 	cout << "Piotr Wontka 167951" << endl;
 	for (int i = 0; i < this->width+2; i++) {
 		cout << "#";
@@ -61,10 +62,17 @@ void World::draw() {
 		cout << "#";
 	}
 }
+void World::drawAll() {
+	this->draw();
+	this->organisms->drawAll();
+	this->moveCursorTo(0, this->height+3);
+}
 void World::Tick() {
 	system("cls");
 	this->draw();
 	this->moveCursorTo(0, this->height + 3);
+	cout << endl << "\tWpisz \"q\" aby wyjœæ; \"s\" aby wyeksportowaæ stan œwiata; " << endl;
+	cout << "\t\t \"i\" aby zimportowaæ stan œwiata" << endl;
 	this->organisms->doAction();
 	this->organisms->refreshMove();
 	this->organisms->drawAll();
