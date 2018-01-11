@@ -130,12 +130,11 @@ bool Animal::collision(Organism *colliding) {
 		}
 		if (tryMultiply) {
 			cout << "Sukces!" << endl;
-			return false;
 		}
 		else {
 			cout << "Brak miejsca!" << endl;
-			return false;
 		}
+		return false;
 	}
 	else {
 		cout << "Walka! ";
