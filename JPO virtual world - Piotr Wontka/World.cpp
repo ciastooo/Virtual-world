@@ -19,8 +19,8 @@ using namespace std;
 
 World::World(int width, int height)
 {
-	if (height > 20) {
-		this->height = 20;
+	if (height > 40) {
+		this->height = 40;
 	}
 	else if (height < 2) {
 		this->height = 2;
@@ -29,8 +29,8 @@ World::World(int width, int height)
 		this->height = height;
 	}
 
-	if (width > 70) {
-		this->width = 70;
+	if (width > 40) {
+		this->width = 40;
 	} else if (width < 2) {
 		this->width = 2;
 	}
@@ -72,7 +72,7 @@ void World::Tick() {
 	this->draw();
 	this->moveCursorTo(0, this->height + 3);
 	cout << endl << "\tWpisz \"q\" aby wyjœæ; \"s\" aby wyeksportowaæ stan œwiata; " << endl;
-	cout << "\t\t \"i\" aby zimportowaæ stan œwiata" << endl;
+	cout << "\t\"i\" aby zimportowaæ stan œwiata\tlub dowolny klawisz aby kontynuowaæ" << endl;
 	this->organisms->doAction();
 	this->organisms->refreshMove();
 	this->organisms->drawAll();

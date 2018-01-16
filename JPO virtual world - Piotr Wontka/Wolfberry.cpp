@@ -25,7 +25,7 @@ bool Wolfberry::reproduce() {
 
 bool Wolfberry::collision(Organism *other) {
 	if(this->Plant::collision(other) && this->toDelete) {
-		// I f we got here, it means that colliding organism ate Wolfberry => it dies
+		// If we got here, it means that colliding organism ate Wolfberry => it dies
 		cout << "Roœlina " << this->symbol << " jest truj¹ca! Zwierzê " << other->getSymbol() << " zatruwa siê" << endl;
 		other->setToDelete();
 		return true;
