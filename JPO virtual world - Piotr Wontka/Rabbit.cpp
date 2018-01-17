@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Rabbit::Rabbit(World *world, int x, int y, bool canMove) : Animal(world, 1, 8, x, y, 'R', canMove)
+Rabbit::Rabbit(World *world, int x, int y, bool canMove) : Animal(world, 1, 8, x, y, 'K', canMove)
 {
 }
 

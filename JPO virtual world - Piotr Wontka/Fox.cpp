@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Fox::Fox(World *world, int x, int y, bool canMove) : Animal(world, 3, 7, x, y, 'F', canMove)
+Fox::Fox(World *world, int x, int y, bool canMove) : Animal(world, 3, 7, x, y, 'l', canMove)
 {
 }
 

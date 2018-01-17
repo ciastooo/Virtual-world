@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Grass::Grass(World *world, int x, int y, bool canMove) : Plant(world, 0, x, y, 'g', canMove, 50)
+Grass::Grass(World *world, int x, int y, bool canMove) : Plant(world, 0, x, y, 't', canMove, 50)
 {
 }
 
